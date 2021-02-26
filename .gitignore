@@ -4,3 +4,5 @@
 __pycache__
 venv
 .idea
+weights/
+scripts/train_tmp/
