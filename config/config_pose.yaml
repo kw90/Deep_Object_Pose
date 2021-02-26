@@ -1,4 +1,4 @@
-topic_camera: "/camera/color/image_rect_color"
+topic_camera: "/camera/color/image_raw"
 topic_camera_info: "/camera/color/camera_info"
 topic_publishing: "dope"
 input_is_rectified: True   # Whether the input image is rectified (strongly suggested!)
@@ -6,14 +6,17 @@ downscale_height: 400      # if the input image is larger than this, scale it do
 
 # Comment any of these lines to prevent detection / pose estimation of that object
 weights: {
-    "cracker":"package://dope/weights/cracker_60.pth",
+    # MY OBJECTS
+    "banana":"package://dope/weights/net_epoch_3.pth",
+    #
+    # "cracker":"package://dope/weights/cracker_60.pth",
     # "gelatin":"package://dope/weights/gelatin_60.pth",
     # "meat":"package://dope/weights/meat_20.pth",
-    "mustard":"package://dope/weights/mustard_60.pth",
-    "soup":"package://dope/weights/soup_60.pth",
-    "sugar":"package://dope/weights/sugar_60.pth",
+    # "mustard":"package://dope/weights/mustard_60.pth",
+    # "soup":"package://dope/weights/soup_60.pth",
+    # "sugar":"package://dope/weights/sugar_60.pth",
     # "bleach":"package://dope/weights/bleach_28_dr.pth"
-    
+
     # NEW OBJECTS - HOPE
     # "AlphabetSoup":"package://dope/weights/AlphabetSoup.pth", 
     # "BBQSauce":"package://dope/weights/BBQSauce.pth", 
@@ -21,7 +24,7 @@ weights: {
     # "Cherries":"package://dope/weights/Cherries.pth", 
     # "ChocolatePudding":"package://dope/weights/ChocolatePudding.pth", 
     # "Cookies":"package://dope/weights/Cookies.pth", 
-    # "Corn":"package://dope/weights/Corn.pth", 
+    "Corn":"package://dope/weights/Corn.pth", 
     # "CreamCheese":"package://dope/weights/CreamCheese.pth", 
     # "GreenBeans":"package://dope/weights/GreenBeans.pth", 
     # "GranolaBars":"package://dope/weights/GranolaBars.pth", 
@@ -48,6 +51,9 @@ weights: {
 
 # Cuboid dimension in cm x,y,z
 dimensions: {
+    # MY OBJECTS
+    "banana": [15, 5, 3],
+
     "cracker": [16.403600692749023,21.343700408935547,7.179999828338623],
     "gelatin": [8.918299674987793, 7.311500072479248, 2.9983000755310059],
     "meat": [10.164673805236816,8.3542995452880859,5.7600898742675781],
@@ -122,10 +128,12 @@ class_ids: {
     "GranolaBars"       : 33, 
     "Peaches"           : 34,
     "GreenBeans"        : 35, 
-    "PeasAndCarrots"    : 36 
+    "PeasAndCarrots"    : 36,
+    "banana"            : 37,
 }
 
 draw_colors: {
+    "banana": [13, 255, 128],  # green
     "cracker": [13, 255, 128],  # green
     "gelatin": [255, 255, 255],  # while
     "meat": [0, 104, 255],  # blue
@@ -154,6 +162,7 @@ meshes: {
 #    "soup":    "file://path/to/Dataset_Utilities/nvdu/data/ycb/aligned_cm/005_tomato_soup_can/google_16k/textured.obj",
 #    "sugar":   "file://path/to/Dataset_Utilities/nvdu/data/ycb/aligned_cm/004_sugar_box/google_16k/textured.obj",
 #    "bleach":  "file://path/to/Dataset_Utilities/nvdu/data/ycb/aligned_cm/021_bleach_cleanser/google_16k/textured.obj",
+    "banana":  "file://hslu/pose-estimation/models/banana.obj",
 }
 
 # optional: If the specified meshes are not in meters, provide a scale here (e.g. if the mesh is in centimeters, scale should be 0.01). default scale: 1.0.
@@ -165,6 +174,7 @@ mesh_scales: {
     "soup":    0.01,
     "sugar":   0.01,
     "bleach":  0.01,
+    "banana":  0.01,
 }
 
 # Config params for DOPE
