@@ -7,13 +7,13 @@ downscale_height: 400      # if the input image is larger than this, scale it do
 # Comment any of these lines to prevent detection / pose estimation of that object
 weights: {
     # MY OBJECTS
-    "banana":"package://dope/weights/net_epoch_3.pth",
+    # "banana":"package://dope/weights/net_epoch_3.pth",
     #
-    # "cracker":"package://dope/weights/cracker_60.pth",
+    "cracker":"package://dope/weights/cracker_60.pth",
     # "gelatin":"package://dope/weights/gelatin_60.pth",
     # "meat":"package://dope/weights/meat_20.pth",
     # "mustard":"package://dope/weights/mustard_60.pth",
-    # "soup":"package://dope/weights/soup_60.pth",
+    "soup":"package://dope/weights/soup_60.pth",
     # "sugar":"package://dope/weights/sugar_60.pth",
     # "bleach":"package://dope/weights/bleach_28_dr.pth"
 
@@ -24,7 +24,7 @@ weights: {
     # "Cherries":"package://dope/weights/Cherries.pth", 
     # "ChocolatePudding":"package://dope/weights/ChocolatePudding.pth", 
     # "Cookies":"package://dope/weights/Cookies.pth", 
-    "Corn":"package://dope/weights/Corn.pth", 
+    # "Corn":"package://dope/weights/Corn.pth", 
     # "CreamCheese":"package://dope/weights/CreamCheese.pth", 
     # "GreenBeans":"package://dope/weights/GreenBeans.pth", 
     # "GranolaBars":"package://dope/weights/GranolaBars.pth", 
@@ -155,11 +155,11 @@ model_transforms: {
 # published for visualization in RViz
 # You can use the nvdu_ycb tool to download the meshes: https://github.com/NVIDIA/Dataset_Utilities#nvdu_ycb
 meshes: {
-#    "cracker": "file://path/to/Dataset_Utilities/nvdu/data/ycb/aligned_cm/003_cracker_box/google_16k/textured.obj",
+   "cracker": "file://path/to/Dataset_Utilities/nvdu/data/ycb/aligned_cm/003_cracker_box/google_16k/textured.obj",
 #    "gelatin": "file://path/to/Dataset_Utilities/nvdu/data/ycb/aligned_cm/009_gelatin_box/google_16k/textured.obj",
 #    "meat":    "file://path/to/Dataset_Utilities/nvdu/data/ycb/aligned_cm/010_potted_meat_can/google_16k/textured.obj",
 #    "mustard": "file://path/to/Dataset_Utilities/nvdu/data/ycb/aligned_cm/006_mustard_bottle/google_16k/textured.obj",
-#    "soup":    "file://path/to/Dataset_Utilities/nvdu/data/ycb/aligned_cm/005_tomato_soup_can/google_16k/textured.obj",
+   "soup":    "file://path/to/Dataset_Utilities/nvdu/data/ycb/aligned_cm/005_tomato_soup_can/google_16k/textured.obj",
 #    "sugar":   "file://path/to/Dataset_Utilities/nvdu/data/ycb/aligned_cm/004_sugar_box/google_16k/textured.obj",
 #    "bleach":  "file://path/to/Dataset_Utilities/nvdu/data/ycb/aligned_cm/021_bleach_cleanser/google_16k/textured.obj",
     "banana":  "file://hslu/pose-estimation/models/banana.obj",
