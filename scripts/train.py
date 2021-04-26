@@ -1443,7 +1443,7 @@ if not opt.data == "":
         train_dataset,
         batch_size=opt.batchsize,
         shuffle=True,
-        num_workers=opt.workers,
+        # num_workers=opt.workers,
         pin_memory=True,
     )
 
@@ -1493,6 +1493,11 @@ if not trainingdata is None:
     print("training data: {} batches".format(len(trainingdata)))
 if not testingdata is None:
     print("testing data: {} batches".format(len(testingdata)))
+
+process_memory_fraction = 0.98
+print(f"setting memory fraction to {process_memory_fraction}")
+torch.cuda.set_per_process_memory_fraction(process_memory_fraction)
+
 print("load models")
 
 net = DopeNetwork(pretrained=opt.pretrained).cuda()
